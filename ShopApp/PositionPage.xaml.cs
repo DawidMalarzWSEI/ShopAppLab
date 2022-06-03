@@ -1,4 +1,5 @@
 ﻿using ShopApp.DB;
+using ShopApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,14 @@ namespace ShopApp
             cmbShop.DisplayMemberPath = "ShopName";
             cmbShop.SelectedValuePath = "Id";
             cmbShop.SelectedIndex = -1;
+            if(model!=null && model.Id!=0)
+            {
+                cmbShop.SelectedValue = model.ShopId;
+                txtPositionname.Text = model.PositionName;
+            }
         }
+
+        public PositionModel model;
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
@@ -42,14 +50,27 @@ namespace ShopApp
                 MessageBox.Show("Please fill all areas");
             else
             {
-                Position position = new Position();
-                position.PositionName = txtPositionname.Text;
-                position.ShopId = Convert.ToInt32(cmbShop.SelectedValue);
-                db.Positions.Add(position);
-                db.SaveChanges();
-                cmbShop.SelectedIndex = -1;
-                txtPositionname.Clear();
-                MessageBox.Show("Position was Added");
+                if(model != null && model.Id != 0)
+                {
+                    Position pst = new Position();
+                    pst.ShopId = (int)cmbShop.SelectedValue;
+                    pst.Id = model.Id;
+                    pst.PositionName = txtPositionname.Text;
+                    db.Positions.Update(pst);
+                    db.SaveChanges();
+                    MessageBox.Show("Positions was Update");
+                }
+                else
+                {
+                    Position position = new Position();
+                    position.PositionName = txtPositionname.Text;
+                    position.ShopId = Convert.ToInt32(cmbShop.SelectedValue);
+                    db.Positions.Add(position);
+                    db.SaveChanges();
+                    cmbShop.SelectedIndex = -1;
+                    txtPositionname.Clear();
+                    MessageBox.Show("Position was Added");
+                }
             }
         }
 

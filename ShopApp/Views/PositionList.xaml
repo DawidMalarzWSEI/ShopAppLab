@@ -18,10 +18,10 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" Margin="40 5 40 5" Name="btnAdd" Content="Add" FontSize="18" Click="btnAdd_Click"/>
-            <Button Grid.Column="1" Margin="40 5 40 5" Name="btnUpdate" Content="Update" FontSize="18"/>
+            <Button Grid.Column="1" Margin="40 5 40 5" Name="btnUpdate" Content="Update" FontSize="18" Click="btnUpdate_Click"/>
             <Button Grid.Column="2" Margin="40 5 40 5" Name="btnDelete" Content="Delete" FontSize="18"/>
         </Grid>
-        <DataGrid x:Name="gridPosition" IsReadOnly="True" AutoGenerateColumns="False" SelectionUnit="FullRow">
+        <DataGrid x:Name="gridPosition" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" SelectionUnit="FullRow">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Width="*" Binding="{Binding Id}" Visibility="Hidden"/>
                 <DataGridTextColumn Header="Position Name" Width="Auto" Binding="{Binding PositionName}"/>

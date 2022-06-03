@@ -62,5 +62,17 @@ namespace ShopApp.Views
             page.ShowDialog();
             FillGrid();
         }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            PositionModel model = (PositionModel)gridPosition.SelectedItem;
+            if(model!=null && model.Id!=0)
+            {
+                PositionPage page = new PositionPage();
+                page.model = model;
+                page.ShowDialog();
+                FillGrid();
+            }
+        }
     }
 }
