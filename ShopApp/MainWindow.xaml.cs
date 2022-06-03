@@ -26,5 +26,10 @@ namespace ShopApp
         {
             DataContext = new ShopViewModel();
         }
+
+        private void btnPosition_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new PositionViewModel();
+        }
     }
 }
