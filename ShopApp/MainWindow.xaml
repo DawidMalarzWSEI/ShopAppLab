@@ -27,7 +27,7 @@
         </Grid.RowDefinitions>
         <ContentControl Content="{Binding}" Grid.Column="1" Grid.Row="1" Grid.RowSpan="8" Height="Auto" Width="Auto"></ContentControl>
         <TextBlock Grid.Row="0" Text="ShopApp" TextAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Broadway" FontWeight="Normal"/>
-        <Button Grid.Row="1" Name="btnEmployee" Height="50" Width="auto" Content="Employee"/>
+        <Button Grid.Row="1" Name="btnEmployee" Height="50" Width="auto" Content="Employee" Click="btnEmployee_Click"/>
         <Button Grid.Row="2" Name="btnTask" Height="50" Width="auto" Content="Task"/>
         <Button Grid.Row="3" Name="btnSalary" Height="50" Width="auto" Content="Salary"/>
         <Button Grid.Row="4" Name="btnPermission" Height="50" Width="auto" Content="Permision"/>
