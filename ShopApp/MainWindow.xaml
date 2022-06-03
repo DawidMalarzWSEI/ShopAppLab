@@ -49,5 +49,11 @@
                 
             </views:PositionList>
         </DataTemplate>
+        
+        <DataTemplate x:Name="EmployeeTemplate" DataType="{x:Type viewmodels:EmployeeViewModel}">
+            <views:EmployeeListView>
+
+            </views:EmployeeListView>
+        </DataTemplate>
     </Window.Resources>
 </Window>
