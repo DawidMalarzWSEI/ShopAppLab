@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="ShopApp.Views.ShopList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ShopApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="40 5 40 5" Name="btnAdd" Content="Add" FontSize="18" Click="btnAdd_Click"/>
+            <Button Grid.Column="1" Margin="40 5 40 5" Name="btnUpdate" Content="Update" FontSize="18" Click="btnUpdate_Click"/>
+            <Button Grid.Column="2" Margin="40 5 40 5" Name="btnDelete" Content="Delete" FontSize="18"/>
+        </Grid>
+        <DataGrid x:Name="gridShop" IsReadOnly="True" AutoGenerateColumns="False" SelectionUnit="FullRow">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Width="*" Binding="{Binding Id}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Shop Name" Width="Auto" Binding="{Binding ShopName}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>
