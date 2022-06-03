@@ -32,7 +32,7 @@
         <Button Grid.Row="3" Name="btnSalary" Height="50" Width="auto" Content="Salary"/>
         <Button Grid.Row="4" Name="btnPermission" Height="50" Width="auto" Content="Permision"/>
         <Button Grid.Row="5" Name="btnShop" Height="50" Width="auto" Content="Shop" Click="btnShop_Click"/>
-        <Button Grid.Row="6" Name="btnPosition" Height="50" Width="auto" Content="Position"/>
+        <Button Grid.Row="6" Name="btnPosition" Height="50" Width="auto" Content="Position" Click="btnPosition_Click"/>
         <Button Grid.Row="7" Name="btnLogOut" Height="50" Width="auto" Content="Log Out"/>
         <Button Grid.Row="8" Name="btnExit" Height="50" Width="auto" Content="Exit" Background="#FFFF3636" Foreground="White"/>
             
@@ -43,6 +43,11 @@
             <views:ShopList>
                 
             </views:ShopList>
+        </DataTemplate>
+        <DataTemplate x:Name="PositiontTemplate" DataType="{x:Type viewmodels:PositionViewModel}">
+            <views:PositionList>
+                
+            </views:PositionList>
         </DataTemplate>
     </Window.Resources>
 </Window>
