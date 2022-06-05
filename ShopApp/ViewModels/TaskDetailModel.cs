@@ -9,6 +9,7 @@ namespace ShopApp.ViewModels
     public class TaskDetailModel
     {
         public int Id { get; set; }
+        public int EmployeeId { get; set; }
         public DateTime TaskStartDate { get; set; }
         public DateTime? TaskDeliveryDate { get; set; }
         public int TaskState { get; set; }
@@ -18,5 +19,7 @@ namespace ShopApp.ViewModels
         public string Surname { get; set; }
         public int UserNo { get; set; }
         public string StateName { get; set; }
+        public int ShopId { get; set; }
+        public int PositionId { get; set; }
     }
 }

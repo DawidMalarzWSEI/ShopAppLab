@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ShopApp.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="800">
+             d:DesignHeight="500" d:DesignWidth="800" Loaded="UserControl_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
@@ -40,7 +40,7 @@
             <Label Content="Surname" Grid.Row="2" Height="34" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <TextBox x:Name="txtSurname" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Height="26"/>
             <Label Content="Department" Grid.Row="3" Height="34" Width="123" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <ComboBox Name="cmbShop" Grid.Column="1" Grid.Row="3" Height="30"  VerticalAlignment="Center"/>
+            <ComboBox Name="cmbShop" Grid.Column="1" Grid.Row="3" Height="30"  VerticalAlignment="Center" SelectionChanged="cmbShop_SelectionChanged"/>
             <Label Content="Position" Grid.Row="4" Height="34" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <ComboBox Name="cmbPosition" Grid.Column="1" Grid.Row="4" Height="30"  VerticalAlignment="Center"/>
             <Label Content="Task Date" Grid.Column="3" Height="34" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center"/>
@@ -52,8 +52,8 @@
             <ComboBox Name="cmbState" Grid.Column="3" Grid.Row="3" Height="30"  VerticalAlignment="Center"/>
             <RadioButton x:Name="rbStart" Content="Start Date" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <RadioButton x:Name="rbDelivery" Content="Delivery Date" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Button x:Name="btnSearch" Content="Search" Grid.Column="4" Grid.Row="3" Margin="10,0,10,5" />
-            <Button x:Name="btnClear" Content="Clear" Grid.Column="4" Grid.Row="4" Margin="10,0,10,5"/>
+            <Button x:Name="btnSearch" Content="Search" Grid.Column="4" Grid.Row="3" Margin="10,0,10,5" Click="btnSearch_Click" />
+            <Button x:Name="btnClear" Content="Clear" Grid.Column="4" Grid.Row="4" Margin="10,0,10,5" Click="btnClear_Click"/>
 
 
         </Grid>
@@ -81,7 +81,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button x:Name="btnApprove" Content="Approve" FontSize="18" FontWeight="Bold" Margin="40,5,40,5"/>
-            <Button x:Name="btnAdd" Content="Add" FontSize="18" Grid.Column="1" FontWeight="Bold" Margin="40,5,40,5"/>
+            <Button x:Name="btnAdd" Content="Add" FontSize="18" Grid.Column="1" FontWeight="Bold" Margin="40,5,40,5" Click="btnAdd_Click"/>
             <Button x:Name="btnUpdate" Content="Update" FontSize="18" Grid.Column="2" FontWeight="Bold" Margin="40,5,40,5"/>
             <Button x:Name="btnDelete" Content="Delete" FontSize="18" Grid.Column="3" FontWeight="Bold" Margin="40,5,40,5"/>
         </Grid>
