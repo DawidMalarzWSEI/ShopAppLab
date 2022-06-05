@@ -49,5 +49,11 @@
                 
             </views:PositionList>
         </DataTemplate>
+        <DataTemplate x:Name="TaskTemplate" DataType="{x:Type viewmodels:TaskViewModel}">
+            <views:TaskList>
+
+            </views:TaskList>
+        </DataTemplate>
+
     </Window.Resources>
 </Window>
