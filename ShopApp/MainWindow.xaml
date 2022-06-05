@@ -27,7 +27,7 @@
         </Grid.RowDefinitions>
         <ContentControl Content="{Binding}" Grid.Column="1" Grid.Row="1" Grid.RowSpan="8" Height="Auto" Width="Auto"></ContentControl>
         <TextBlock Grid.Row="0" Text="ShopApp" TextAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Broadway" FontWeight="Normal"/>
-        <Button Grid.Row="1" Name="btnEmployee" Height="50" Width="auto" Content="Employee"/>
+        <Button Grid.Row="1" Name="btnEmployee" Height="50" Width="auto" Content="Employee" Click="btnEmployee_Click"/>
         <Button Grid.Row="2" Name="btnTask" Height="50" Width="auto" Content="Task"/>
         <Button Grid.Row="3" Name="btnSalary" Height="50" Width="auto" Content="Salary"/>
         <Button Grid.Row="4" Name="btnPermission" Height="50" Width="auto" Content="Permision"/>
@@ -49,11 +49,20 @@
                 
             </views:PositionList>
         </DataTemplate>
+<<<<<<< HEAD
         <DataTemplate x:Name="TaskTemplate" DataType="{x:Type viewmodels:TaskViewModel}">
             <views:TaskList>
 
             </views:TaskList>
         </DataTemplate>
 
+=======
+        
+        <DataTemplate x:Name="EmployeeTemplate" DataType="{x:Type viewmodels:EmployeeViewModel}">
+            <views:EmployeeListView>
+
+            </views:EmployeeListView>
+        </DataTemplate>
+>>>>>>> edb921739b5a0e88c7bf1a997117979e690de6b1
     </Window.Resources>
 </Window>
