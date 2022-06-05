@@ -15,7 +15,9 @@ namespace ShopApp.ViewModels
         public string Surename { get; set; }
 
         public int PositionId { get; set; }
+        public string PositionName { get; set; }
         public int ShopId { get; set; }
+        public string ShopName { get; set; }
 
         public int Salary { get; set; }
         public bool isAdmin { get; set; }
@@ -23,5 +25,6 @@ namespace ShopApp.ViewModels
         public DateTime BirthDay { get; set; }
         public string Address { get; set; }
         public string Password { get; set; }
+        public string ImagePath { get; set; }
     }
 }

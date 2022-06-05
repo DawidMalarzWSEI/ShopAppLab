@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using ShopApp.DB;
+using ShopApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -29,6 +30,7 @@ namespace ShopApp
         }
         ShopDbContext db = new ShopDbContext();
         List<Position> positions = new List<Position>();
+        public EmployeeDetailModel model;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             cmbShop.ItemsSource = db.Shops.ToList();
@@ -40,6 +42,25 @@ namespace ShopApp
             cmbPosition.DisplayMemberPath = "PositionName";
             cmbPosition.SelectedValuePath = "Id";
             cmbPosition.SelectedIndex = -1;
+            if (model != null && model.Id != 0)
+            {
+                cmbShop.SelectedValue = model.ShopId;
+                cmbPosition.SelectedValue = model.PositionId;
+                txtUserNo.Text = model.UserNo.ToString();
+                txtPassword.Text = model.Password;
+                txtName.Text = model.Name;
+                txtSurname.Text = model.Surename;
+                txtSalary.Text = model.Salary.ToString();
+                txtAdress.AppendText(model.Address);
+                picker1.SelectedDate = model.BirthDay;
+                chisAdmin.IsChecked = model.isAdmin;
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.UriSource = new Uri(@"Images/" + model.ImagePath, UriKind.RelativeOrAbsolute);
+                image.EndInit();
+                EmployeeImage.Source = image;
+
+            }
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -52,43 +73,99 @@ namespace ShopApp
             }
             else
             {
-                Employee employee = new Employee();
-                employee.UserNo = Convert.ToInt32(txtUserNo.Text);
-                employee.Password = txtPassword.Text;
-                employee.Name = txtName.Text;
-                employee.Surename = txtSurname.Text;
-                employee.Salary = Convert.ToInt32(txtSalary.Text);
-                employee.ShopId = Convert.ToInt32(cmbShop.SelectedValue);
-                employee.PositionId = Convert.ToInt32(cmbPosition.SelectedValue);
-                TextRange text = new TextRange(txtAdress.Document.ContentStart, txtAdress.Document.ContentEnd);
-                employee.Address = text.Text;
-                employee.BirthDay = picker1.SelectedDate;
-                employee.IsAdmin = (bool)chisAdmin.IsChecked;
-                string filename = "";
-                string Unique = Guid.NewGuid().ToString();
-                filename += Unique + dialog.SafeFileName;
-                employee.ImagePath = filename;
-                db.Employees.Add(employee);
-                db.SaveChanges();
-                File.Copy(txtImage.Text, @"Images//" + filename);
-                MessageBox.Show("Employee was Added");
-                txtUserNo.Clear();
-                txtPassword.Clear();
-                txtName.Clear();
-                txtSurname.Clear();
-                txtSalary.Clear();
-                picker1.SelectedDate = DateTime.Today;
-                cmbShop.SelectedIndex = -1;
-                cmbPosition.ItemsSource = positions;
-                cmbPosition.SelectedIndex = -1; txtAdress.Document.Blocks.Clear();
-                chisAdmin.IsChecked = false;
-                EmployeeImage.Source = new BitmapImage();
-                txtImage.Clear();
+                if (model != null && model.Id != 0)
+                {
+                    Employee employee = db.Employees.Find(model.Id);
+                    List<Employee> employeelist = db.Employees.Where(x => x.UserNo == Convert.ToInt32(txtUserNo.Text) &&
+                      x.Id != employee.Id).ToList();
+                    if (employeelist.Count > 0)
+                    {
+                        MessageBox.Show("This User no is already used by Another Employee");
+                    }
+                    else
+                    {
+
+
+                        if (txtImage.Text.Trim() != "")
+                        {
+                            if (File.Exists(@"Images//" + employee.ImagePath))
+                            {
+                                File.Delete(@"Images//" + employee.ImagePath);
+                                string filename = "";
+                                string Unique = Guid.NewGuid().ToString();
+                                filename += Unique + System.IO.Path.GetFileName(txtImage.Text);
+                                File.Copy(txtImage.Text, @"Images//" + filename);
+                                employee.ImagePath = filename;
+                            }
+
+
+                        }
+                        employee.UserNo = Convert.ToInt32(txtUserNo.Text);
+                        employee.Password = txtPassword.Text;
+                        employee.IsAdmin = (bool)chisAdmin.IsChecked;
+                        TextRange adres = new TextRange(txtAdress.Document.ContentStart, txtAdress.Document.ContentEnd);
+                        employee.Address = adres.Text;
+                        employee.BirthDay = picker1.SelectedDate;
+                        employee.ShopId = Convert.ToInt32(cmbShop.SelectedValue);
+                        employee.PositionId = Convert.ToInt32(cmbPosition.SelectedValue);
+                        employee.Name = txtName.Text;
+                        employee.Salary = Convert.ToInt32(txtSalary.Text);
+                        employee.Surename = txtSurname.Text;
+                        db.SaveChanges();
+                        MessageBox.Show("Employee Was Updated");
+                    }
+                }
+                else
+                {
+                    var Uniquelist = db.Employees.Where(x => x.UserNo == Convert.ToInt32(txtUserNo.Text)).ToList();
+                    if (Uniquelist.Count > 0)
+                    {
+                        MessageBox.Show("This User No is Already used by another employee");
+                    }
+                    else
+                    {
+
+                        Employee employee = new Employee();
+                        employee.UserNo = Convert.ToInt32(txtUserNo.Text);
+                        employee.Password = txtPassword.Text;
+                        employee.Name = txtName.Text;
+                        employee.Surename = txtSurname.Text;
+                        employee.Salary = Convert.ToInt32(txtSalary.Text);
+                        employee.ShopId = Convert.ToInt32(cmbShop.SelectedValue);
+                        employee.PositionId = Convert.ToInt32(cmbPosition.SelectedValue);
+                        TextRange text = new TextRange(txtAdress.Document.ContentStart, txtAdress.Document.ContentEnd);
+                        employee.Address = text.Text;
+                        employee.BirthDay = picker1.SelectedDate;
+                        employee.IsAdmin = (bool)chisAdmin.IsChecked;
+                        string filename = "";
+                        string Unique = Guid.NewGuid().ToString();
+                        filename += Unique + dialog.SafeFileName;
+                        employee.ImagePath = filename;
+                        db.Employees.Add(employee);
+                        db.SaveChanges();
+                        File.Copy(txtImage.Text, @"Images//" + filename);
+                        MessageBox.Show("Employee was Added");
+                        txtUserNo.Clear();
+                        txtPassword.Clear();
+                        txtName.Clear();
+                        txtSurname.Clear();
+                        txtSalary.Clear();
+                        picker1.SelectedDate = DateTime.Today;
+                        cmbShop.SelectedIndex = -1;
+                        cmbPosition.ItemsSource = positions;
+                        cmbPosition.SelectedIndex = -1; txtAdress.Document.Blocks.Clear();
+                        chisAdmin.IsChecked = false;
+                        EmployeeImage.Source = new BitmapImage();
+                        txtImage.Clear();
+                    }
+
+                }
+
             }
         }
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         OpenFileDialog dialog = new OpenFileDialog();
