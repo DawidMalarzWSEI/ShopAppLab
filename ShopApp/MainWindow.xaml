@@ -7,7 +7,7 @@
         xmlns:views="clr-namespace:ShopApp.Views"
         xmlns:viewmodels="clr-namespace:ShopApp.ViewModels"
         mc:Ignorable="d"
-        Title="ShopManager" Name="ShopAppMainWindow" Height="450" Width="800" Background="White">
+        Title="ShopManager" Name="ShopAppMainWindow" Height="600" Width="1000" Background="White">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -28,7 +28,7 @@
         <ContentControl Content="{Binding}" Grid.Column="1" Grid.Row="1" Grid.RowSpan="8" Height="Auto" Width="Auto"></ContentControl>
         <TextBlock Grid.Row="0" Text="ShopApp" TextAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Broadway" FontWeight="Normal"/>
         <Button Grid.Row="1" Name="btnEmployee" Height="50" Width="auto" Content="Employee" Click="btnEmployee_Click"/>
-        <Button Grid.Row="2" Name="btnTask" Height="50" Width="auto" Content="Task"/>
+        <Button Grid.Row="2" Name="btnTask" Height="50" Width="auto" Content="Task" Click="btnTask_Click"/>
         <Button Grid.Row="3" Name="btnSalary" Height="50" Width="auto" Content="Salary"/>
         <Button Grid.Row="4" Name="btnPermission" Height="50" Width="auto" Content="Permision"/>
         <Button Grid.Row="5" Name="btnShop" Height="50" Width="auto" Content="Shop" Click="btnShop_Click"/>
@@ -49,7 +49,14 @@
                 
             </views:PositionList>
         </DataTemplate>
-        
+
+        <DataTemplate x:Name="TaskTemplate" DataType="{x:Type viewmodels:TaskViewModel}">
+            <views:TaskList>
+
+            </views:TaskList>
+        </DataTemplate>
+
+
         <DataTemplate x:Name="EmployeeTemplate" DataType="{x:Type viewmodels:EmployeeViewModel}">
             <views:EmployeeListView>
 

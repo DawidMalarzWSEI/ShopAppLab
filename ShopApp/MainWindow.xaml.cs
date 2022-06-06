@@ -32,9 +32,14 @@ namespace ShopApp
             DataContext = new PositionViewModel();
         }
 
+        private void btnTask_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new TaskViewModel();
+        }
         private void btnEmployee_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new EmployeeViewModel();
+
         }
     }
 }
