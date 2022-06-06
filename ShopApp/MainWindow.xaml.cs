@@ -41,5 +41,10 @@ namespace ShopApp
             DataContext = new EmployeeViewModel();
 
         }
+
+        private void btnSalary_Click()
+        {
+
+        }
     }
 }
