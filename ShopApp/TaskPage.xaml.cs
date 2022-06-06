@@ -47,9 +47,9 @@ namespace ShopApp
             cmbPosition.ItemsSource = positionsList;
             cmbPosition.DisplayMemberPath = "PositionName";
             cmbPosition.SelectedValuePath = "Id";
-            cmbPosition.SelectedIndex = -1;
+            cmbPosition.SelectedIndex = -1; 
 
-            if(model!=null && model.Id!=0)
+            if (model!=null && model.Id!=0)
             {
                 txtUserNo.Text = model.UserNo.ToString();
                 txtName.Text = model.Name;

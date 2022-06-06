@@ -42,9 +42,9 @@ namespace ShopApp
 
         }
 
-        private void btnSalary_Click()
+        private void btnSalary_Click(object sender, RoutedEventArgs e)
         {
-
+            DataContext = new SalaryViewModel();
         }
     }
 }
