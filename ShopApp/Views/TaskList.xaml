@@ -39,7 +39,7 @@
             <TextBox x:Name="txtName" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Height="26"/>
             <Label Content="Surname" Grid.Row="2" Height="34" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <TextBox x:Name="txtSurname" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Height="26"/>
-            <Label Content="Department" Grid.Row="3" Height="34" Width="123" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label Content="Shop" Grid.Row="3" Height="34" Width="123" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <ComboBox Name="cmbShop" Grid.Column="1" Grid.Row="3" Height="30"  VerticalAlignment="Center" SelectionChanged="cmbShop_SelectionChanged"/>
             <Label Content="Position" Grid.Row="4" Height="34" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <ComboBox Name="cmbPosition" Grid.Column="1" Grid.Row="4" Height="30"  VerticalAlignment="Center"/>
@@ -57,7 +57,7 @@
 
 
         </Grid>
-        <DataGrid x:Name="gridTask" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+        <DataGrid x:Name="gridTask" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="gridTask_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Width="*" Binding="{Binding Id}" Visibility="Hidden"/>
                 <DataGridTextColumn Header="UserNo" Width="*" Binding="{Binding UserNo}" />
@@ -82,7 +82,7 @@
             </Grid.ColumnDefinitions>
             <Button x:Name="btnApprove" Content="Approve" FontSize="18" FontWeight="Bold" Margin="40,5,40,5"/>
             <Button x:Name="btnAdd" Content="Add" FontSize="18" Grid.Column="1" FontWeight="Bold" Margin="40,5,40,5" Click="btnAdd_Click"/>
-            <Button x:Name="btnUpdate" Content="Update" FontSize="18" Grid.Column="2" FontWeight="Bold" Margin="40,5,40,5"/>
+            <Button x:Name="btnUpdate" Content="Update" FontSize="18" Grid.Column="2" FontWeight="Bold" Margin="40,5,40,5" Click="btnUpdate_Click"/>
             <Button x:Name="btnDelete" Content="Delete" FontSize="18" Grid.Column="3" FontWeight="Bold" Margin="40,5,40,5"/>
         </Grid>
     </Grid>
