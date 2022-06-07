@@ -43,6 +43,17 @@ namespace ShopApp
             cmbPosition.DisplayMemberPath = "PositionName";
             cmbPosition.SelectedValuePath = "Id";
             cmbPosition.SelectedIndex = -1;
+            if (model != null && model.Id != 0)
+            {
+
+                txtName.Text = model.Name;
+                txtSalary.Text = model.Amount.ToString();
+                txtSurname.Text = model.Surname;
+                txtUserNo.Text = model.UserNo.ToString();
+                txtYear.Text = model.Year.ToString();
+                EmployeeId = model.EmployeeId;
+                cmbMonth.SelectedValue = model.MonthId;
+            }
         }
         int EmployeeId = 0;
 
