@@ -3,12 +3,25 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ShopApp"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="ShopApp Login" Height="450" Width="800">
-    <Grid>
+        Title="ShopApp Login" 
+        Height="450" 
+        Width="700"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        FontSize="18"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    
+    <Grid Margin="20">
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity="0.4"/>
+        </Grid.Effect>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -16,11 +29,62 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Label Content="UserNo" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBox x:Name="txtUserNo" Grid.Column="1" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center" PreviewTextInput="txtUserNo_PreviewTextInput"/>
-        <Label Content="Password" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"/>
-        <TextBox x:Name="txtPassword" Grid.Row="1" Grid.Column="1" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Button x:Name="btnLogin" Content="Login" Grid.Row="2" Margin="50 0 0 0" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnLogin_Click"/>
-        <Button x:Name="btnExit" Content="Exit" Grid.Row="2" Grid.Column="2" Margin="50 0 0 0" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnExit_Click"/>
-    </Grid>
+        <Border Grid.Column="0" Grid.RowSpan="3"
+                Background="#c5ed12">
+            <StackPanel VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                <TextBlock FontSize="30"
+                       FontWeight="Bold"
+                       Text="ShopApp"
+                       Foreground="#FFFFFF">
+
+                </TextBlock>
+            </StackPanel>
+            
+        </Border>
+        <Border Grid.Column="1" Grid.RowSpan="3" Background="#FFFFFF">
+            <StackPanel VerticalAlignment="Center" Margin="75 0">
+                
+                <TextBox  x:Name="txtUserNo" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                         materialDesign:HintAssist.Hint="User Number"
+                         materialDesign:HintAssist.FloatingOffset="0, -20"
+                         BorderBrush="#c5c8cc"
+                          Margin="0 27"
+                          BorderThickness="0 0 0 1.5"/>
+
+                <PasswordBox  x:Name="txtPassword" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" 
+                         materialDesign:HintAssist.Hint="Password"
+                         materialDesign:HintAssist.FloatingOffset="0, -20"
+                         BorderBrush="#c5c8cc"
+                         Margin="0 27"
+                         BorderThickness="0 0 0 1.5"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="btnLogin" 
+                            Content="Login"
+                            BorderBrush="#c5ed12"
+                            Background="#c5ed12"
+                            Foreground="#FFFFFF" 
+                            Click="btnLogin_Click"
+                            Width="120"
+                            Height="45"
+                            FontSize="17"
+                            materialDesign:ButtonAssist.CornerRadius="22" 
+                            Cursor="Hand"/>
+                    <Button x:Name="btnExit" Content="or Exit"
+                            FontSize="17"
+                            Background="#FFFFFF"
+                            Foreground="DarkRed" 
+                            Click="btnExit_Click"
+                            Margin="5 0 0 0"
+                            Width="120"
+                            Height="45"
+                            Style="{StaticResource MaterialDesignFlatButton}"
+                            materialDesign:ButtonAssist.CornerRadius="22"/>
+
+                </StackPanel>
+                
+            </StackPanel>
+        </Border>
+         </Grid>
 </Window>

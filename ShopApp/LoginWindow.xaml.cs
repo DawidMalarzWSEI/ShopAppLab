@@ -34,14 +34,14 @@ namespace ShopApp
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (txtUserNo.Text.Trim() == "" || txtPassword.Text.Trim() == "")
+            if (txtUserNo.Text.Trim() == "" || txtPassword.Password.Trim() == "")
             {
                 MessageBox.Show("Please fill UserNo or Password");
             }
             else
             {
                 Employee employee = db.Employees.FirstOrDefault(x => x.UserNo == Convert.ToInt32(txtUserNo.Text) &&
-                                                                x.Password.Equals(txtPassword.Text));
+                                                                x.Password.Equals(txtPassword.Password));
                 if (employee != null && employee.Id != 0)
                 {
                     this.Visibility = Visibility.Collapsed;
