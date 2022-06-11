@@ -40,8 +40,7 @@ namespace ShopApp
             }
             else
             {
-                Employee employee = db.Employees.FirstOrDefault(x => x.UserNo == Convert.ToInt32(txtUserNo.Text) &&
-                                                                x.Password.Equals(txtPassword.Password));
+                Employee employee = db.Employees.FirstOrDefault(x => x.UserNo == Convert.ToInt32(txtUserNo.Text) && x.Password.Equals(txtPassword.Password.ToString()));
                 if (employee != null && employee.Id != 0)
                 {
                     this.Visibility = Visibility.Collapsed;

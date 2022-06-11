@@ -57,7 +57,7 @@
                          materialDesign:HintAssist.FloatingOffset="0, -20"
                          BorderBrush="#c5c8cc"
                          Margin="0 27"
-                         BorderThickness="0 0 0 1.5"/>
+                         BorderThickness="0 0 0 1.5" Cursor="IBeam"/>
 
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="btnLogin" 
@@ -71,7 +71,7 @@
                             FontSize="17"
                             materialDesign:ButtonAssist.CornerRadius="22" 
                             Cursor="Hand"/>
-                    <Button x:Name="btnExit" Content="or Exit"
+                    <Button x:Name="btnExit" Content="Exit"
                             FontSize="17"
                             Background="#FFFFFF"
                             Foreground="DarkRed" 
@@ -80,7 +80,7 @@
                             Width="120"
                             Height="45"
                             Style="{StaticResource MaterialDesignFlatButton}"
-                            materialDesign:ButtonAssist.CornerRadius="22"/>
+                            materialDesign:ButtonAssist.CornerRadius="22" Cursor="Hand"/>
 
                 </StackPanel>
                 
