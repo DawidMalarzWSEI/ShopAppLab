@@ -47,7 +47,7 @@ namespace ShopApp
                 cmbShop.SelectedValue = model.ShopId;
                 cmbPosition.SelectedValue = model.PositionId;
                 txtUserNo.Text = model.UserNo.ToString();
-                txtPassword.Text = model.Password;
+                txtPassword.Password = model.Password;
                 txtName.Text = model.Name;
                 txtSurname.Text = model.Surename;
                 txtSalary.Text = model.Salary.ToString();
@@ -65,7 +65,7 @@ namespace ShopApp
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            if (txtUserNo.Text.Trim() == "" || txtPassword.Text.Trim() == "" || txtName.Text.Trim() == ""
+            if (txtUserNo.Text.Trim() == "" || txtPassword.Password.Trim() == "" || txtName.Text.Trim() == ""
                || txtSurname.Text.Trim() == "" || txtSalary.Text.Trim() == "" || cmbShop.SelectedIndex == -1
                || cmbPosition.SelectedIndex == -1)
             {
@@ -101,7 +101,7 @@ namespace ShopApp
 
                         }
                         employee.UserNo = Convert.ToInt32(txtUserNo.Text);
-                        employee.Password = txtPassword.Text;
+                        employee.Password = txtPassword.Password;
                         employee.IsAdmin = (bool)chisAdmin.IsChecked;
                         TextRange adres = new TextRange(txtAdress.Document.ContentStart, txtAdress.Document.ContentEnd);
                         employee.Address = adres.Text;
@@ -127,7 +127,7 @@ namespace ShopApp
 
                         Employee employee = new Employee();
                         employee.UserNo = Convert.ToInt32(txtUserNo.Text);
-                        employee.Password = txtPassword.Text;
+                        employee.Password = txtPassword.Password;
                         employee.Name = txtName.Text;
                         employee.Surename = txtSurname.Text;
                         employee.Salary = Convert.ToInt32(txtSalary.Text);
