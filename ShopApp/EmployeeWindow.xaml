@@ -29,7 +29,7 @@
         <TextBox Grid.Column="1" Name="txtUserNo" TextWrapping="Wrap" VerticalAlignment="Center" Height="26" Margin="0,0,20,0" PreviewTextInput="txtUserNo_PreviewTextInput" TextChanged="txtUserNo_TextChanged_1"/>
         <Button x:Name="btnCheck" Content="Check" Grid.Column="2" Margin="10,10,10,10" Click="btnCheck_Click"/>
         <Label Content="Password" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <TextBox Grid.Column="4" Name="txtPassword" TextWrapping="Wrap" VerticalAlignment="Center" Height="26" Margin="0,0,20,0"/>
+        <PasswordBox Grid.Column="4" Name="txtPassword" VerticalAlignment="Center" Height="26" Margin="0,0,20,0"/>
         <Label Content="Name" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <TextBox Grid.Column="1" Name="txtName" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Height="26" Margin="0,0,20,0"/>
         <Label Content="Surname" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center"/>
