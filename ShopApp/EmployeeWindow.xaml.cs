@@ -103,8 +103,7 @@ namespace ShopApp
                         employee.UserNo = Convert.ToInt32(txtUserNo.Text);
                         employee.Password = txtPassword.Password;
                         employee.IsAdmin = (bool)chisAdmin.IsChecked;
-                        TextRange adres = new TextRange(txtAdress.Document.ContentStart, txtAdress.Document.ContentEnd);
-                        employee.Address = adres.Text;
+                        employee.Address = txtAdress.Text;
                         employee.BirthDay = picker1.SelectedDate;
                         employee.ShopId = Convert.ToInt32(cmbShop.SelectedValue);
                         employee.PositionId = Convert.ToInt32(cmbPosition.SelectedValue);
@@ -133,8 +132,7 @@ namespace ShopApp
                         employee.Salary = Convert.ToInt32(txtSalary.Text);
                         employee.ShopId = Convert.ToInt32(cmbShop.SelectedValue);
                         employee.PositionId = Convert.ToInt32(cmbPosition.SelectedValue);
-                        TextRange text = new TextRange(txtAdress.Document.ContentStart, txtAdress.Document.ContentEnd);
-                        employee.Address = text.Text;
+                        employee.Address = txtAdress.Text;
                         employee.BirthDay = picker1.SelectedDate;
                         employee.IsAdmin = (bool)chisAdmin.IsChecked;
                         string filename = "";
@@ -153,7 +151,7 @@ namespace ShopApp
                         picker1.SelectedDate = DateTime.Today;
                         cmbShop.SelectedIndex = -1;
                         cmbPosition.ItemsSource = positions;
-                        cmbPosition.SelectedIndex = -1; txtAdress.Document.Blocks.Clear();
+                        cmbPosition.SelectedIndex = -1; txtAdress.Clear();
                         chisAdmin.IsChecked = false;
                         EmployeeImage.Source = new BitmapImage();
                         txtImage.Clear();
