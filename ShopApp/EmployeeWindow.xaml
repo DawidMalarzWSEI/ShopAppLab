@@ -10,7 +10,7 @@
         Title="EmployeeWindow" 
         Height="740" 
         Width="860" 
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded" Cursor="IBeam">
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -40,7 +40,7 @@
                     materialDesign:HintAssist.FloatingOffset="0, -20"
                     BorderBrush="#c5c8cc"
                     Height="40"
-                    BorderThickness="0 0 0 1.5" Margin="0,9,0,9"/>
+                    BorderThickness="0 0 0 1.5" Margin="0,9,0,9" Cursor="IBeam"/>
 
         <Button x:Name="btnCheck" 
                 Grid.Column="2"
@@ -49,8 +49,6 @@
                 Background="#c5ed12"
                 Foreground="#FFFFFF"
                 FontSize="17"
-                
-                materialDesign:ButtonAssist.CornerRadius="22" 
                 Click="btnCheck_Click"
                 Cursor="Hand"
                 Margin="38,12,37,14"/>
@@ -89,7 +87,6 @@
                 Background="#c5ed12"
                 Foreground="#FFFFFF"
                 FontSize="17"
-                materialDesign:ButtonAssist.CornerRadius="22" 
                 Click="btnChoose_Click"
                 Cursor="Hand" Margin="38,12,37,14"/>
         <TextBlock Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Text="Choose Image: " FontWeight="Bold" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -126,7 +123,6 @@
                 Background="#c5ed12"
                 Foreground="#FFFFFF"
                 FontSize="17"
-                materialDesign:ButtonAssist.CornerRadius="22" 
                 Click="btnSave_Click"
                 Cursor="Hand" Margin="38,12,37,14"/>
         <Button x:Name="btnClose" 
@@ -137,7 +133,6 @@
                 Background="#c5ed12"
                 Foreground="#FFFFFF"
                 FontSize="17"
-                materialDesign:ButtonAssist.CornerRadius="22" 
                 Click="btnClose_Click"
                 Cursor="Hand"  Margin="38,12,37,14"/>
 
