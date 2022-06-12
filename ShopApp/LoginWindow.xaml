@@ -50,7 +50,7 @@
                          materialDesign:HintAssist.FloatingOffset="0, -20"
                          BorderBrush="#c5c8cc"
                           Margin="0 27"
-                          BorderThickness="0 0 0 1.5"/>
+                          BorderThickness="0 0 0 1.5" Cursor="IBeam"/>
 
                 <PasswordBox  x:Name="txtPassword" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" 
                          materialDesign:HintAssist.Hint="Password"

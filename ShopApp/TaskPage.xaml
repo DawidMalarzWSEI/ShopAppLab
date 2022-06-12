@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShopApp"
         mc:Ignorable="d"
-        Title="TaskPage" Height="450" Width="800" Loaded="Window_Loaded">
+        WindowStartupLocation="CenterScreen"
+        Title="TaskPage" 
+        Height="450" 
+        Width="800" 
+        Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
