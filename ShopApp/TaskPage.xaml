@@ -56,7 +56,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="7*"/>
             </Grid.RowDefinitions>
-            <Label Content="Shp" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" Height="34"/>
+            <Label Content="Shop" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" Height="34"/>
             <ComboBox Name="cmbShop" Grid.Column="1" VerticalAlignment="Center" Height="30" Margin="0,0,0,0" SelectionChanged="cmbShop_SelectionChanged"/>
 
             <Label Content="Position" Grid.Row="1" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" Height="34"/>

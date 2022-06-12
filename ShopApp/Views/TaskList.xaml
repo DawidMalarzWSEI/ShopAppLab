@@ -80,10 +80,9 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnApprove" Content="Approve" FontSize="18" FontWeight="Bold" Margin="40,5,40,5"/>
-            <Button x:Name="btnAdd" Content="Add" FontSize="18" Grid.Column="1" FontWeight="Bold" Margin="40,5,40,5" Click="btnAdd_Click"/>
-            <Button x:Name="btnUpdate" Content="Update" FontSize="18" Grid.Column="2" FontWeight="Bold" Margin="40,5,40,5" Click="btnUpdate_Click"/>
-            <Button x:Name="btnDelete" Content="Delete" FontSize="18" Grid.Column="3" FontWeight="Bold" Margin="40,5,40,5"/>
+            <Button x:Name="btnAdd" Content="Add" FontSize="18" Grid.Column="0" FontWeight="Bold" Margin="60,7,30,6" Click="btnAdd_Click"/>
+            <Button x:Name="btnUpdate" Content="Update" FontSize="18" Grid.Column="1" FontWeight="Bold" Margin="145,7,145,6" Click="btnUpdate_Click" Grid.ColumnSpan="2"/>
+            <Button x:Name="btnDelete" Content="Delete" FontSize="18" Grid.Column="3" FontWeight="Bold" Margin="31,7,59,6" Click="btnDelete_Click" RenderTransformOrigin="2.114,0.651"/>
         </Grid>
     </Grid>
 </UserControl>

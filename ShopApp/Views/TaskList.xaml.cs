@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Task = ShopApp.DB.Task;
 
 namespace ShopApp.Views
 {
@@ -68,7 +69,7 @@ namespace ShopApp.Views
             gridTask.ItemsSource = taskList;
             searchList = taskList;
             cmbShop.ItemsSource = db.Shops.ToList();
-            cmbShop.DisplayMemberPath = "DepartmentName";
+            cmbShop.DisplayMemberPath = "ShopName";
             cmbShop.SelectedValuePath = "Id";
             cmbShop.SelectedIndex = -1;
             positionsList = db.Positions.ToList();
@@ -147,6 +148,23 @@ namespace ShopApp.Views
             page.model = model;
             page.ShowDialog();
             FillDataGrid();
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure to delete", "Question", MessageBoxButton.YesNo
+               , MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                if (model.Id != 0)
+                {
+                    TaskDetailModel taskmodel = (TaskDetailModel)gridTask.SelectedItem;
+                    Task task = db.Tasks.First(x => x.Id == taskmodel.Id);
+                    db.Tasks.Remove(task);
+                    db.SaveChanges();
+                    MessageBox.Show("Task was Deleted");
+                    FillDataGrid();
+                }
+            }
         }
     }
 }
