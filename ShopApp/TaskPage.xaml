@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShopApp"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="TaskPage" 
-        Height="450" 
+        Height="550" 
         Width="800" 
         Loaded="Window_Loaded">
     <Grid>
@@ -31,20 +32,73 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Label Content="UserNo" Height="34" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBox x:Name="txtUserNo" IsEnabled="False" Grid.Column="1" Height="26" Margin="0,0,0,0"/>
-            <Label Content="Name" Height="34" Grid.Row="1" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBox x:Name="txtName" IsEnabled="False" Grid.Row="1" Grid.Column="1" Height="26" Margin="0,0,0,0"/>
-            <Label Content="Surname" Height="34" Grid.Row="2" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBox x:Name="txtSurname" IsEnabled="False" Grid.Row="2" Grid.Column="1" Height="26" Margin="0,0,0,0"/>
+            <!--<TextBox x:Name="txtUserNo" IsEnabled="False" Grid.Column="1" Height="26" Margin="0,0,0,0"/>-->
+            <!--<TextBox x:Name="txtName" IsEnabled="False" Grid.Row="1" Grid.Column="1" Height="26" Margin="0,0,0,0"/>-->
+            <!--<TextBox x:Name="txtSurname" IsEnabled="False" Grid.Row="2" Grid.Column="1" Height="26" Margin="0,0,0,0"/>-->
+            <!--<TextBox x:Name="txtTitle" Grid.Row="3" TextWrapping="Wrap" Grid.Column="1" Height="26" Margin="0,0,0,0"/>-->
+            <TextBox  x:Name="txtUserNo" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    Grid.Column="0"
+                    materialDesign:HintAssist.Hint="User Number"
+                    materialDesign:HintAssist.FloatingOffset="0, -20"
+                    BorderBrush="#c5c8cc"
+                    Height="40"
+                    BorderThickness="0 0 0 1.5" Margin="0,9,0,9" Cursor="IBeam"/>
 
-            <Label Content="Title" Height="34" Grid.Row="3" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBox x:Name="txtTitle" Grid.Row="3" TextWrapping="Wrap" Grid.Column="1" Height="26" Margin="0,0,0,0"/>
-            <Label Content="Content" Height="34" Grid.Row="4" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtSurname" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    Height="40"
+                    materialDesign:HintAssist.Hint="User Surname"
+                    materialDesign:HintAssist.FloatingOffset="0, -20"
+                    BorderBrush="#c5c8cc"
+                    BorderThickness="0 0 0 1.5" Margin="5,9,0,9"/>
+            <TextBox  x:Name="txtName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Height="40"
+                    materialDesign:HintAssist.Hint="User Name"
+                    materialDesign:HintAssist.FloatingOffset="0, -20"
+                    BorderBrush="#c5c8cc"
+                    BorderThickness="0 0 0 1.5" Margin="0,9,0,9"/>
+            
+            <TextBox  x:Name="txtTitle" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Height="40"
+                    materialDesign:HintAssist.Hint="Title"
+                    materialDesign:HintAssist.FloatingOffset="0, -20"
+                    BorderBrush="#c5c8cc"
+                    BorderThickness="0 0 0 1.5" Margin="0,9,0,9"/>
+           
+            <TextBox Grid.Column="3" Name="txtImage" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Height="26" Margin="0,0,20,0" Visibility="Hidden"/>
+
+
+
+            <TextBlock FontWeight="Bold" Text="Content:" Grid.Column="0" Grid.Row="4" FontSize="17" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             <TextBox x:Name="txtContent" Grid.Row="4" Grid.RowSpan="3" Grid.Column="1" TextWrapping="Wrap" Margin="0,10,0,10"/>
-            <Button x:Name="btnSave" Content="Save" Grid.Row="8" HorizontalAlignment="Right" Margin="0,10,0,15" Width="140" Click="btnSave_Click"/>
-            <Button x:Name="btnClose" Content="Close" Grid.Row="8" Grid.Column="1" HorizontalAlignment="Center" Margin="0,10,0,15" Width="140" Click="btnClose_Click"/>
-
+            <Button x:Name="btnSave" 
+                Content="Save"
+                Grid.Row="8"
+                BorderBrush="#c5ed12"
+                Background="#c5ed12"
+                Foreground="#FFFFFF" 
+                Width="120"
+                Height="45"
+                FontSize="17"
+                Click="btnSave_Click"
+                Cursor="Hand"/>
+            <Button x:Name="btnClose" 
+                Content="Close"
+                Grid.Column="1"
+                Grid.Row="8"
+                BorderBrush="#c5ed12"
+                Background="#c5ed12"
+                Foreground="#FFFFFF" 
+                Width="120"
+                Height="45"
+                FontSize="17"
+                Click="btnClose_Click"
+                Cursor="Hand"/>
         </Grid>
         <Grid Grid.Column="1">
             <Grid.ColumnDefinitions>
@@ -56,10 +110,12 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="7*"/>
             </Grid.RowDefinitions>
-            <Label Content="Shp" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" Height="34"/>
+            
+            <TextBlock FontWeight="Bold" Text="Shop:" Grid.Row="0" FontSize="17" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             <ComboBox Name="cmbShop" Grid.Column="1" VerticalAlignment="Center" Height="30" Margin="0,0,0,0" SelectionChanged="cmbShop_SelectionChanged"/>
 
-            <Label Content="Position" Grid.Row="1" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" Height="34"/>
+           
+            <TextBlock FontWeight="Bold" Text="Position:" Grid.Row="1" FontSize="17" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             <ComboBox Name="cmbPosition" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Height="30" Margin="0,0,0,0"/>
             <DataGrid Grid.Row="2" AutoGenerateColumns="False" Grid.ColumnSpan="2" Margin="0,0,0,0" Name="gridEmployee" SelectionChanged="gridEmployee_SelectionChanged">
                 <DataGrid.Columns>
