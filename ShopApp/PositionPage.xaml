@@ -35,7 +35,6 @@
                 Width="120"
                 Height="45"
                 FontSize="17"
-                materialDesign:ButtonAssist.CornerRadius="22" 
                 Click="btnSave_Click"
                 Cursor="Hand"/>
         <Button x:Name="btnClose" 
@@ -49,7 +48,6 @@
                 Height="45"
                 FontSize="17"
                 Click="btnClose_Click"
-                materialDesign:ButtonAssist.CornerRadius="22" 
                 Cursor="Hand"/>
     </Grid>
 </Window>

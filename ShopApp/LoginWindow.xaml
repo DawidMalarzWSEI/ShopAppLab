@@ -69,7 +69,6 @@
                             Width="120"
                             Height="45"
                             FontSize="17"
-                            materialDesign:ButtonAssist.CornerRadius="22" 
                             Cursor="Hand"/>
                     <Button x:Name="btnExit" Content="Exit"
                             FontSize="17"
@@ -80,7 +79,7 @@
                             Width="120"
                             Height="45"
                             Style="{StaticResource MaterialDesignFlatButton}"
-                            materialDesign:ButtonAssist.CornerRadius="22" Cursor="Hand"/>
+                            Cursor="Hand"/>
 
                 </StackPanel>
                 
