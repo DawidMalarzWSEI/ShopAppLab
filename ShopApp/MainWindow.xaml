@@ -10,8 +10,8 @@
         WindowStartupLocation="CenterScreen"
         Title="ShopManager" 
         Name="ShopAppMainWindow" 
-        Height="600" 
-        Width="1000" 
+        Height="700" 
+        Width="1200" 
         Background="White">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -19,9 +19,9 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
         <Border Grid.Column="0" Background="#fafafa">
-            <StackPanel HorizontalAlignment="Center" Margin="0 10"> 
+            <StackPanel HorizontalAlignment="Center" Margin="0 10">
                 <Button 
-                    Margin="0 10"
+                    Margin="0 30"
                     Name="btnEmployee"
                     Click="btnEmployee_Click"
                     Style="{StaticResource MaterialDesignFloatingActionButton}"
@@ -29,12 +29,12 @@
                     BorderBrush="{x:Null}"
                     Background="{x:Null}">
                     <StackPanel Margin="5">
-                        <materialDesign:PackIcon Kind="Person" Width="40" Height="40"/>
+                        <materialDesign:PackIcon Kind="PersonGroup" Width="40" Height="40"/>
                     </StackPanel>
 
                 </Button>
                 <Button 
-                    Margin="0 10"
+                    Margin="0 30"
                     Name="btnTask"
                     Click="btnTask_Click"
                     Style="{StaticResource MaterialDesignFloatingActionButton}"
@@ -47,7 +47,7 @@
 
                 </Button>
                 <Button 
-                    Margin="0 10"
+                    Margin="0 30"
                     Name="btnShop"
                     Click="btnShop_Click"
                     Style="{StaticResource MaterialDesignFloatingActionButton}"
@@ -61,13 +61,27 @@
                 </Button>
 
                 <Button 
-                    Margin="0 270"
+                    Margin="0 30"
+                    Name="btnPossition"
+                    Click="btnPosition_Click"
+                    Style="{StaticResource MaterialDesignFloatingActionButton}"
+                    HorizontalAlignment="Left"
+                    BorderBrush="{x:Null}"
+                    Background="{x:Null}">
+                    <StackPanel Margin="5">
+                        <materialDesign:PackIcon Kind="AccountTie"  Width="40" Height="40"/>
+                    </StackPanel>
+
+                </Button>
+
+                <Button 
+                    Margin="0 120"
                     Name="btnExit"
                     Style="{StaticResource MaterialDesignFloatingActionButton}"
                     HorizontalAlignment="Left"
                     BorderBrush="{x:Null}"
                     Background="{x:Null}" Cursor="Hand">
-                    
+
                     <StackPanel Margin="5">
                         <materialDesign:PackIcon Kind="ExitToApp" FontSize="20"  Width="40" Height="40" Foreground="Red"/>
                     </StackPanel>
@@ -79,29 +93,29 @@
                 <Button Name="btnShop" Height="50" Width="auto" Content="Shop" Click="btnShop_Click"/>-->
             </StackPanel>
         </Border>
-        
+
         <ContentControl Content="{Binding}" Grid.Column="1" Grid.Row="1" Grid.RowSpan="8" Height="Auto" Width="Auto"></ContentControl>
-        
+
         <!--<TextBlock Grid.Row="0" Text="ShopApp" TextAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Broadway" FontWeight="Normal"/>-->
-        
+
         <!--<Button Grid.Row="3" Name="btnSalary" Height="50" Width="auto" Content="Salary"/>
         <Button Grid.Row="4" Name="btnPermission" Height="50" Width="auto" Content="Permision"/>-->
-       
+
         <!--<Button Grid.Row="6" Name="btnPosition" Height="50" Width="auto" Content="Position" Click="btnPosition_Click"/>-->
         <!--<Button Grid.Row="7" Name="btnLogOut" Height="50" Width="auto" Content="Log Out"/>-->
         <!--<Button Grid.Row="8" Name="btnExit" Height="50" Width="auto" Content="Exit" Background="#FFFF3636" Foreground="White"/>-->
-            
+
 
     </Grid>
     <Window.Resources>
         <DataTemplate x:Name="ShopTemplate" DataType="{x:Type viewmodels:ShopViewModel}">
             <views:ShopList>
-                
+
             </views:ShopList>
         </DataTemplate>
         <DataTemplate x:Name="PositiontTemplate" DataType="{x:Type viewmodels:PositionViewModel}">
             <views:PositionList>
-                
+
             </views:PositionList>
         </DataTemplate>
 

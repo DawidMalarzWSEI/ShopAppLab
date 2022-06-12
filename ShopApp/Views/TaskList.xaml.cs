@@ -79,7 +79,7 @@ namespace ShopApp.Views
             cmbPosition.SelectedIndex = -1;
             List<TaskState> taskstates = db.TaskStates.ToList();
             cmbState.ItemsSource = taskstates;
-            cmbState.DisplayMemberPath = "NameState";
+            cmbState.DisplayMemberPath = "StateName";
             cmbState.SelectedValuePath = "Id";
             cmbState.SelectedIndex = -1;
 
