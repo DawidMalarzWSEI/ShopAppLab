@@ -59,7 +59,7 @@
                     </StackPanel>
 
                 </Button>
-
+                
                 <Button 
                     Margin="0 30"
                     Name="btnPossition"
@@ -67,7 +67,7 @@
                     Style="{StaticResource MaterialDesignFloatingActionButton}"
                     HorizontalAlignment="Left"
                     BorderBrush="{x:Null}"
-                    Background="{x:Null}">
+                    Background="{x:Null}" Cursor="Hand">
                     <StackPanel Margin="5">
                         <materialDesign:PackIcon Kind="AccountTie"  Width="40" Height="40"/>
                     </StackPanel>
@@ -88,23 +88,10 @@
 
                 </Button>
 
-
-                <!--<Button Name="btnTask" Height="50" Width="auto" Content="Task" Click="btnTask_Click"/>
-                <Button Name="btnShop" Height="50" Width="auto" Content="Shop" Click="btnShop_Click"/>-->
             </StackPanel>
         </Border>
 
         <ContentControl Content="{Binding}" Grid.Column="1" Grid.Row="1" Grid.RowSpan="8" Height="Auto" Width="Auto"></ContentControl>
-
-        <!--<TextBlock Grid.Row="0" Text="ShopApp" TextAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Broadway" FontWeight="Normal"/>-->
-
-        <!--<Button Grid.Row="3" Name="btnSalary" Height="50" Width="auto" Content="Salary"/>
-        <Button Grid.Row="4" Name="btnPermission" Height="50" Width="auto" Content="Permision"/>-->
-
-        <!--<Button Grid.Row="6" Name="btnPosition" Height="50" Width="auto" Content="Position" Click="btnPosition_Click"/>-->
-        <!--<Button Grid.Row="7" Name="btnLogOut" Height="50" Width="auto" Content="Log Out"/>-->
-        <!--<Button Grid.Row="8" Name="btnExit" Height="50" Width="auto" Content="Exit" Background="#FFFF3636" Foreground="White"/>-->
-
 
     </Grid>
     <Window.Resources>

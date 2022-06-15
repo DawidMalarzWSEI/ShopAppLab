@@ -4,20 +4,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ShopApp.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="800" Loaded="UserControl_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
-            <RowDefinition Height="6*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <DataGrid x:Name="gridEmployee" Grid.Row="1" Grid.ColumnSpan="5" AutoGenerateColumns="False"  IsReadOnly="True" SelectionMode="Single">
             <DataGrid.Columns>
@@ -41,33 +42,52 @@
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="60*"/>
-                <ColumnDefinition Width="100*"/>
-                <ColumnDefinition Width="60*"/>
-                <ColumnDefinition Width="100*"/>
-                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="UserNo" Height="34" Width="78" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBox x:Name="txtUserNo" Grid.Column="1" TextWrapping="Wrap" Margin="0,0,0,0" Height="26"/>
-            <Label Content="Name" Grid.Row="1" Height="34" Width="78" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBox x:Name="txtName" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Margin="0,0,0,0" Height="26"/>
-            <Label Content="Surname" Grid.Row="2" Height="34" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBox x:Name="txtSurname" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Margin="0,0,0,0" Height="26"/>
+
+            <TextBox  x:Name="txtUserNo" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    materialDesign:HintAssist.Hint="User Username"
+                    materialDesign:HintAssist.FloatingOffset="0, -20"
+                    BorderBrush="#c5c8cc"
+                    Height="40"
+                    BorderThickness="0 0 0 1.5" Margin="0,9,0,9" Cursor="IBeam"/>
+            <TextBox  x:Name="txtName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    materialDesign:HintAssist.Hint="User Name"
+                    materialDesign:HintAssist.FloatingOffset="0, -20"
+                    BorderBrush="#c5c8cc"
+                    Height="40"
+                    BorderThickness="0 0 0 1.5" Margin="0,9,0,9"/>
+            <TextBox  x:Name="txtSurname" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    materialDesign:HintAssist.Hint="User Surname"
+                    materialDesign:HintAssist.FloatingOffset="0, -20"
+                    BorderBrush="#c5c8cc"
+                    Height="40"
+                    BorderThickness="0 0 0 1.5" Margin="0,9,0,9"/>
             <Label Content="Shop" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" Height="34" Grid.Column="2"/>
             <ComboBox Name="cmbShop" Grid.Column="3" VerticalAlignment="Center" Height="30" Margin="0,0,0,0" SelectionChanged="cmbShop_SelectionChanged"/>
             <Label Content="Position" Width="auto" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="34" Grid.Column="2"/>
             <ComboBox Name="cmbPosition" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" Height="30" Margin="0,0,0,0"/>
 
-            <Button Grid.Column="4" Content="Search" Name="btnSearch" Margin="20,5,10,0" Click="btnSearch_Click" Height="40" VerticalAlignment="Top" />
-            <Button Grid.Column="4" Grid.Row="1" Content="Clear" Name="btnClear" Margin="20,5,10,5" Click="btnClear_Click" />
-
+            <Button Grid.Column="4" Content="Search" Name="btnSearch" Margin="20,5,10,0" Click="btnSearch_Click" VerticalAlignment="Top" Background="#c5ed12" />
+            <Button Grid.Column="4" Grid.Row="1" Content="Clear" Name="btnClear" Margin="20,5,10,5" Click="btnClear_Click" Background="#c5ed12"/>
         </Grid>
-        <Button x:Name="btnAdd" Content="Add" FontSize="18" FontWeight="Bold" Grid.Column="1" Grid.Row="2" Margin="40,5,40,5" Click="btnAdd_Click"/>
-        <Button x:Name="btnUpdate" Content="Update" FontSize="18" FontWeight="Bold" Grid.Column="2" Grid.Row="2" Margin="40,5,40,5" Click="btnUpdate_Click"/>
-        <Button x:Name="btnDelete" Content="Delete" FontSize="18" FontWeight="Bold" Grid.Column="3" Grid.Row="2" Margin="40,5,40,5" Click="btnDelete_Click"/>
+        
+        <Button x:Name="btnAdd" Content="Add" FontSize="18" FontWeight="Bold" Grid.Column="1" Grid.Row="2" Margin="40 5 40 5" Click="btnAdd_Click" Background="#c5ed12" Cursor="Hand"/>
+        <Button x:Name="btnUpdate" Content="Update" FontSize="18" FontWeight="Bold" Grid.Column="2" Grid.Row="2" Margin="40 5 40 5" Background="#c5ed12" Click="btnUpdate_Click" Cursor="Hand"/>
+        <Button x:Name="btnDelete" Content="Delete" FontSize="18" FontWeight="Bold" Grid.Column="3" Grid.Row="2" Margin="40 5 40 5" Background="#c5ed12" Click="btnDelete_Click" Cursor="Hand"/>
     </Grid>
 
 </UserControl>
