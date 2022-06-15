@@ -11,7 +11,7 @@
         Height="250" 
         Width="350" 
         Loaded="Window_Loaded" >
-    <Grid>
+    <Grid Cursor="Hand">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
