@@ -40,7 +40,7 @@ namespace ShopApp
             employeeList = db.Employees.OrderBy(x => x.Name).ToList();
             gridEmployee.ItemsSource = employeeList;
             cmbShop.ItemsSource = db.Shops.ToList();
-            cmbShop.DisplayMemberPath = "DepartmentName";
+            cmbShop.DisplayMemberPath = "ShopName";
             cmbShop.SelectedValuePath = "Id";
             cmbShop.SelectedIndex = -1;
             positionsList = db.Positions.ToList();
