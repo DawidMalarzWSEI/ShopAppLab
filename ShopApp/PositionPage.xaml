@@ -3,9 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:ShopApp"
         mc:Ignorable="d"
-        Title="PositionPage" Height="250" Width="350" Loaded="Window_Loaded" >
+        WindowStartupLocation="CenterScreen"
+        Title="PositionPage" 
+        Height="250" 
+        Width="350" 
+        Loaded="Window_Loaded" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -20,8 +25,31 @@
         <Label Content="Position Name" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <ComboBox Name="cmbShop" Grid.Column="1" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <TextBox x:Name="txtPositionname" Grid.Row="1" Grid.Column="1" Width="120" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" />
-        <Button x:Name="btnSave" Content="Save" Grid.Row="2" Margin="50,0,0,0" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnSave_Click" />
-        <Button x:Name="btnClose" Content="Close" Grid.Column="1" Grid.Row="2" Width="100" Margin="0,0,50,0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnClose_Click"/>
-        
+       
+        <Button x:Name="btnSave" 
+                Content="Save"
+                Grid.Row="2"
+                BorderBrush="#c5ed12"
+                Background="#c5ed12"
+                Foreground="#FFFFFF" 
+                Width="120"
+                Height="45"
+                FontSize="17"
+                materialDesign:ButtonAssist.CornerRadius="22" 
+                Click="btnSave_Click"
+                Cursor="Hand"/>
+        <Button x:Name="btnClose" 
+                Content="Close"
+                Grid.Column="1"
+                Grid.Row="2"
+                BorderBrush="#c5ed12"
+                Background="#c5ed12"
+                Foreground="#FFFFFF" 
+                Width="120"
+                Height="45"
+                FontSize="17"
+                Click="btnClose_Click"
+                materialDesign:ButtonAssist.CornerRadius="22" 
+                Cursor="Hand"/>
     </Grid>
 </Window>

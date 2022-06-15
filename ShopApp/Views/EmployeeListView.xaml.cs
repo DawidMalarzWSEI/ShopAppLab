@@ -36,7 +36,12 @@ namespace ShopApp.Views
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-
+            EmployeeDetailModel model = (EmployeeDetailModel)gridEmployee.SelectedItem;
+            Employee emp = db.Employees.Find(model.Id);
+            db.Employees.Remove(emp);
+            db.SaveChanges();
+            MessageBox.Show("Employee was Deleted");
+            FillDatagrid();
         }
         void FillDatagrid()
         {
@@ -135,11 +140,11 @@ namespace ShopApp.Views
                 Id=x.Id,
                 Name=x.Name,
                 Address=x.Address,
-                BirthDay=(DateTime)x.BirthDay,
-                ShopId=x.ShopId,
-                ShopName=x.Shop.ShopName,
+                BirthDay = (DateTime)x.BirthDay,
+                ShopId = x.ShopId,
+                ShopName= x.Shop.ShopName,
                 isAdmin=x.IsAdmin,
-                Password=x.Password,
+                Password = x.Password,
                 PositionId=x.PositionId,
                 PositionName=x.Position.PositionName,
                 Salary=x.Salary,
