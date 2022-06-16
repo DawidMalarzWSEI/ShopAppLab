@@ -65,7 +65,7 @@ namespace ShopApp.Views
                     Shop shop = db.Shops.Find(model.Id);
                     db.Shops.Remove(shop);
                     db.SaveChanges();
-                    MessageBox.Show("Department was deleted");
+                    MessageBox.Show("Shop was deleted");
                     gridShop.ItemsSource = db.Shops.ToList();
                 }
 

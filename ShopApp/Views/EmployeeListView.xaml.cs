@@ -32,6 +32,7 @@ namespace ShopApp.Views
         {
             EmployeeWindow window = new EmployeeWindow();
             window.ShowDialog();
+            FillDatagrid();
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
