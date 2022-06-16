@@ -80,7 +80,7 @@
                     Style="{StaticResource MaterialDesignFloatingActionButton}"
                     HorizontalAlignment="Left"
                     BorderBrush="{x:Null}"
-                    Background="{x:Null}" Cursor="Hand">
+                    Background="{x:Null}" Cursor="Hand" Click="btnExit_Click">
 
                     <StackPanel Margin="5">
                         <materialDesign:PackIcon Kind="ExitToApp" FontSize="20"  Width="40" Height="40" Foreground="Red"/>

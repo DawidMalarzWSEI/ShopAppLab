@@ -85,8 +85,8 @@
             <ComboBox Name="cmbState" Grid.Column="3" Grid.Row="3" Height="30"  VerticalAlignment="Center"/>
             <RadioButton x:Name="rbStart" Content="Start Date" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <RadioButton x:Name="rbDelivery" Content="Delivery Date" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Button x:Name="btnSearch" Content="Search" Grid.Column="4" Grid.Row="2" Margin="10,0,10,5" Click="btnSearch_Click" Background="#c5ed12" Width="80" />
-            <Button x:Name="btnClear" Content="Clear" Grid.Column="4" Grid.Row="3" Margin="10,0,10,5" Click="btnClear_Click" Background="#c5ed12" Width="80"/>
+            <Button x:Name="btnSearch" Content="Search" Grid.Column="4" Grid.Row="2" Margin="10,0,10,5" Click="btnSearch_Click" Background="#c5ed12"/>
+            <Button x:Name="btnClear" Content="Clear" Grid.Column="4" Grid.Row="3" Margin="10,0,10,5" Click="btnClear_Click" Background="#c5ed12"/>
 
 
         </Grid>
