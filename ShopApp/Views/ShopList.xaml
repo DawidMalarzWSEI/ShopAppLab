@@ -19,7 +19,7 @@
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" Margin="40 5 40 5" Name="btnAdd" Content="Add" FontSize="18" FontWeight="Bold" Background="#c5ed12" Click="btnAdd_Click" Cursor="Hand"/>
             <Button Grid.Column="1" Margin="40 5 40 5" Name="btnUpdate" Content="Update" FontSize="18" FontWeight="Bold" Background="#c5ed12" Click="btnUpdate_Click"/>
-            <Button Grid.Column="2" Margin="40 5 40 5" Name="btnDelete" Content="Delete" FontSize="18" FontWeight="Bold" Background="#c5ed12"/>
+            <Button Grid.Column="2" Margin="40 5 40 5" Name="btnDelete" Content="Delete" FontSize="18" FontWeight="Bold" Background="#c5ed12" Click="btnDelete_Click"/>
         </Grid>
         <DataGrid x:Name="gridShop" IsReadOnly="True" AutoGenerateColumns="False" SelectionUnit="FullRow">
             <DataGrid.Columns>

@@ -111,12 +111,10 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnApprove" Content="Approve" FontSize="18" Background="#c5ed12" FontWeight="Bold" Margin="40,5,40,5" Cursor="Hand"/>
-            <Button x:Name="btnAdd" Content="Add" FontSize="18" Background="#c5ed12" Grid.Column="1" FontWeight="Bold" Margin="40,5,40,5" Click="btnAdd_Click"/>
-            <Button x:Name="btnUpdate" Content="Update" FontSize="18" Background="#c5ed12" Grid.Column="2" FontWeight="Bold" Margin="40,5,40,5" Click="btnUpdate_Click"/>
-            <Button x:Name="btnDelete" Content="Delete" FontSize="18" Background="#c5ed12" Grid.Column="3" FontWeight="Bold" Margin="40,5,40,5"/>
+            <Button x:Name="btnAdd" Content="Add" FontSize="18" Background="#c5ed12" Grid.Column="0" FontWeight="Bold" Margin="40,5,40,5" Click="btnAdd_Click"/>
+            <Button x:Name="btnUpdate" Content="Update" FontSize="18" Background="#c5ed12" Grid.Column="1" FontWeight="Bold" Margin="40,5,40,5" Click="btnUpdate_Click"/>
+            <Button x:Name="btnDelete" Content="Delete" FontSize="18" Background="#c5ed12" Grid.Column="2" FontWeight="Bold" Margin="40,5,40,5" Click="btnDelete_Click" Cursor="Hand"/>
         </Grid>
     </Grid>
 </UserControl>
