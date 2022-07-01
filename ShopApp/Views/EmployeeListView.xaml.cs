@@ -50,8 +50,10 @@ namespace ShopApp.Views
             cmbShop.DisplayMemberPath = "DepartmentName";
             cmbShop.SelectedValuePath = "Id";
             cmbShop.SelectedIndex = -1;
+
             positions = db.Positions.ToList();
             cmbPosition.ItemsSource = positions;
+
             cmbPosition.DisplayMemberPath = "PositionName";
             cmbPosition.SelectedValuePath = "Id";
             cmbPosition.SelectedIndex = -1;
