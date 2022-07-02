@@ -18,8 +18,15 @@
 - Przyciski do `dodawania`, `usuwania`, `edycji` pracownika
 
 #### Zakładka z zadaniami dla każdego z pracowników
+- Tabela z taskami
+- Wyszukiwanie tasków
+- Przycisk do `dodawania`, `usuwania`, `edycji` pracownika
+
 #### Lista sklepów
+- Tabela z listą sklepów
+
 #### Lista pracowników
+- Tabela z pracownikami + nazwa sklepu
 
 ## Technicznie:
 ### Baza danych
@@ -35,3 +42,15 @@
 - Pobieranie rekordów jako dane
 
 # Instalacja projektu w wersji deweloperskiej
+
+## Pliki
+- Skrypt SQL
+- Plik projektowy
+
+## Wymagania
+- Visual Studio 2022 z .NET 6.0
+- MS SQL Server
+
+## Instalacja
+
+Do uruchomienia aplikacji nasz serwer SQL musi być widoczny pod adresem "**.**". Następnie urachamiamy dołączony skrypt. Po dodaniu bazy danych przechodzimy do pliku projektowego a następnie `ShopApp\ShopApp\bin\Debug\net6.0-windows\Images` i tworzymy folder `Images`. Po wkonaniu wszystkich poprzednich operacji uruchamiamy ShopAppLab.sln i aplikajca jest gotowa do użycia.
