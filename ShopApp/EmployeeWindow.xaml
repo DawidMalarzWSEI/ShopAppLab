@@ -1,0 +1,140 @@
+﻿<Window x:Class="ShopApp.EmployeeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShopApp"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="EmployeeWindow" 
+        Height="740" 
+        Width="860" 
+        Loaded="Window_Loaded" Cursor="IBeam">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="98*"/>
+            <ColumnDefinition Width="195"/>
+            <ColumnDefinition Width="195"/>
+            <ColumnDefinition Width="195"/>
+            <ColumnDefinition Width="195"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBox  x:Name="txtUserNo" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    Grid.Column="1"
+                    PreviewTextInput="txtUserNo_PreviewTextInput" 
+                    TextChanged="txtUserNo_TextChanged_1"
+                    materialDesign:HintAssist.Hint="User Number"
+                    materialDesign:HintAssist.FloatingOffset="0, -20"
+                    BorderBrush="#c5c8cc"
+                    Height="40"
+                    BorderThickness="0 0 0 1.5" Margin="0,9,0,9" Cursor="IBeam"/>
+
+        <Button x:Name="btnCheck" 
+                Grid.Column="2"
+                Content="Check"
+                BorderBrush="#c5ed12"
+                Background="#c5ed12"
+                Foreground="#FFFFFF"
+                FontSize="17"
+                Click="btnCheck_Click"
+                Cursor="Hand"
+                Margin="38,12,37,14"/>
+
+        <PasswordBox  x:Name="txtPassword" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" 
+                         materialDesign:HintAssist.Hint="Password"
+                         materialDesign:HintAssist.FloatingOffset="0, -20"
+                         BorderBrush="#c5c8cc"
+                          Grid.Column="1" 
+                          Grid.Row="2"
+                          Height="40"
+                         BorderThickness="0 0 0 1.5" Cursor="IBeam"/>
+
+        <TextBox  x:Name="txtName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Height="40"
+                    materialDesign:HintAssist.Hint="User Name"
+                    materialDesign:HintAssist.FloatingOffset="0, -20"
+                    BorderBrush="#c5c8cc"
+                    BorderThickness="0 0 0 1.5" Margin="0,9,0,9"/>
+        <TextBox  x:Name="txtSurname" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    Grid.Column="2"
+                    Grid.Row="1"
+                    Height="40"
+                    materialDesign:HintAssist.Hint="User Surname"
+                    materialDesign:HintAssist.FloatingOffset="0, -20"
+                    BorderBrush="#c5c8cc"
+                    BorderThickness="0 0 0 1.5" Margin="5,9,0,9"/>
+        <TextBox Grid.Column="3" Name="txtImage" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Height="26" Margin="0,0,20,0" Visibility="Hidden"/>
+        <Button x:Name="btnChoose" 
+                Grid.Column="4"
+                Grid.Row="2"
+                Content="Choose"
+                BorderBrush="#c5ed12"
+                Background="#c5ed12"
+                Foreground="#FFFFFF"
+                FontSize="17"
+                Click="btnChoose_Click"
+                Cursor="Hand" Margin="38,12,37,14"/>
+        <TextBlock Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Text="Choose Image: " FontWeight="Bold" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Image x:Name="EmployeeImage" Grid.Row="3" Grid.RowSpan="4" Grid.ColumnSpan="2" Grid.Column="3" Margin="90,10,11,10"/>
+        <CheckBox x:Name="chisAdmin" Content="isAdmin" Grid.Column="5" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" FlowDirection="RightToLeft" Height="18" Width="65"/>
+        <TextBox  x:Name="txtSalary" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    Grid.Column="1"
+                    Grid.Row="3"
+                  Height="40"
+                    materialDesign:HintAssist.Hint="Salary"
+                    materialDesign:HintAssist.FloatingOffset="0, -20"
+                    BorderBrush="#c5c8cc"
+                    BorderThickness="0 0 0 1.5" Margin="0,9,0,9"/>
+        <TextBlock FontWeight="Bold" Text="Shop:" Grid.Column="1" Grid.Row="4" FontSize="17" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock FontWeight="Bold" Text="Position:" Grid.Column="1" Grid.Row="5" FontSize="17" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock FontWeight="Bold" Text="Birthday:" Grid.Column="1" Grid.Row="6" FontSize="17" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ComboBox Name="cmbShop" Grid.Column="2" Grid.Row="4" Height="30" Margin="0,0,20,0" SelectionChanged="cmbShop_SelectionChanged"/>
+        <ComboBox Name="cmbPosition" Grid.Column="2" Grid.Row="5" Height="30" Margin="0,0,20,0"/>
+        <DatePicker Name="picker1" Grid.Row="6" Grid.Column="2" Width="180" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox  x:Name="txtAdress" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    Grid.Column="1"
+                    Grid.Row="7"
+                    Height="40"
+                    Grid.ColumnSpan="3"
+                    materialDesign:HintAssist.Hint="Address"
+                    materialDesign:HintAssist.FloatingOffset="0, -20"
+                    BorderBrush="#c5c8cc"
+                    BorderThickness="0 0 0 1.5" Margin="0,9,0,9"/>
+        <Button x:Name="btnSave" 
+                Grid.Column="1"
+                Grid.Row="8"
+                Content="Save"
+                BorderBrush="#c5ed12"
+                Background="#c5ed12"
+                Foreground="#FFFFFF"
+                FontSize="17"
+                Click="btnSave_Click"
+                Cursor="Hand" Margin="38,12,37,14"/>
+        <Button x:Name="btnClose" 
+                Content="Close"
+                Grid.Row="8"
+                Grid.Column="3"
+                BorderBrush="#c5ed12"
+                Background="#c5ed12"
+                Foreground="#FFFFFF"
+                FontSize="17"
+                Click="btnClose_Click"
+                Cursor="Hand"  Margin="38,12,37,14"/>
+
+    </Grid>
+</Window>

@@ -1,19 +1,7 @@
 ﻿using ShopApp.DB;
 using ShopApp.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace ShopApp
 {
@@ -37,6 +25,26 @@ namespace ShopApp
         private void btnShop_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new ShopViewModel();
+        }
+
+        private void btnPosition_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new PositionViewModel();
+        }
+
+        private void btnTask_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new TaskViewModel();
+        }
+        private void btnEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new EmployeeViewModel();
+
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

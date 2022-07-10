@@ -1,0 +1,89 @@
+﻿<Window x:Class="ShopApp.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="ShopApp Login" 
+        Height="450" 
+        Width="700"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        FontSize="18"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    
+    <Grid Margin="20">
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity="0.4"/>
+        </Grid.Effect>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Column="0" Grid.RowSpan="3"
+                Background="#c5ed12">
+            <StackPanel VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                <TextBlock FontSize="30"
+                       FontWeight="Bold"
+                       Text="ShopApp"
+                       Foreground="#FFFFFF">
+
+                </TextBlock>
+            </StackPanel>
+            
+        </Border>
+        <Border Grid.Column="1" Grid.RowSpan="3" Background="#FFFFFF">
+            <StackPanel VerticalAlignment="Center" Margin="75 0">
+                
+                <TextBox  x:Name="txtUserNo" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                         materialDesign:HintAssist.Hint="User Number"
+                         materialDesign:HintAssist.FloatingOffset="0, -20"
+                         BorderBrush="#c5c8cc"
+                          Margin="0 27"
+                          BorderThickness="0 0 0 1.5" Cursor="IBeam"/>
+
+                <PasswordBox  x:Name="txtPassword" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" 
+                         materialDesign:HintAssist.Hint="Password"
+                         materialDesign:HintAssist.FloatingOffset="0, -20"
+                         BorderBrush="#c5c8cc"
+                         Margin="0 27"
+                         BorderThickness="0 0 0 1.5" Cursor="IBeam"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="btnLogin" 
+                            Content="Login"
+                            BorderBrush="#c5ed12"
+                            Background="#c5ed12"
+                            Foreground="#FFFFFF" 
+                            Click="btnLogin_Click"
+                            Width="120"
+                            Height="45"
+                            FontSize="17"
+                            Cursor="Hand"/>
+                    <Button x:Name="btnExit" Content="Exit"
+                            FontSize="17"
+                            Background="#FFFFFF"
+                            Foreground="DarkRed" 
+                            Click="btnExit_Click"
+                            Margin="5 0 0 0"
+                            Width="120"
+                            Height="45"
+                            Style="{StaticResource MaterialDesignFlatButton}"
+                            Cursor="Hand"/>
+
+                </StackPanel>
+                
+            </StackPanel>
+        </Border>
+         </Grid>
+</Window>

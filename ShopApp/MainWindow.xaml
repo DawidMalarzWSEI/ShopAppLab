@@ -5,44 +5,118 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShopApp"
         xmlns:views="clr-namespace:ShopApp.Views"
-        xmlns:viewmodels="clr-namespace:ShopApp.ViewModels"
+        xmlns:viewmodels="clr-namespace:ShopApp.ViewModels" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="ShopManager" Name="ShopAppMainWindow" Height="450" Width="800" Background="White">
+        WindowStartupLocation="CenterScreen"
+        Title="ShopManager" 
+        Name="ShopAppMainWindow" 
+        Height="700" 
+        Width="1200" 
+        Background="White">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            
-        </Grid.RowDefinitions>
+        <Border Grid.Column="0" Background="#fafafa">
+            <StackPanel HorizontalAlignment="Center" Margin="0 10">
+                <Button 
+                    Margin="0 30"
+                    Name="btnEmployee"
+                    Click="btnEmployee_Click"
+                    Style="{StaticResource MaterialDesignFloatingActionButton}"
+                    HorizontalAlignment="Left"
+                    BorderBrush="{x:Null}"
+                    Background="{x:Null}">
+                    <StackPanel Margin="5">
+                        <materialDesign:PackIcon Kind="PersonGroup" Width="40" Height="40"/>
+                    </StackPanel>
+
+                </Button>
+                <Button 
+                    Margin="0 30"
+                    Name="btnTask"
+                    Click="btnTask_Click"
+                    Style="{StaticResource MaterialDesignFloatingActionButton}"
+                    HorizontalAlignment="Left"
+                    BorderBrush="{x:Null}"
+                    Background="{x:Null}">
+                    <StackPanel Margin="5">
+                        <materialDesign:PackIcon Kind="CalendarTask"  Width="40" Height="40"/>
+                    </StackPanel>
+
+                </Button>
+                <Button 
+                    Margin="0 30"
+                    Name="btnShop"
+                    Click="btnShop_Click"
+                    Style="{StaticResource MaterialDesignFloatingActionButton}"
+                    HorizontalAlignment="Left"
+                    BorderBrush="{x:Null}"
+                    Background="{x:Null}">
+                    <StackPanel Margin="5">
+                        <materialDesign:PackIcon Kind="Shopping"  Width="40" Height="40"/>
+                    </StackPanel>
+
+                </Button>
+                
+                <Button 
+                    Margin="0 30"
+                    Name="btnPossition"
+                    Click="btnPosition_Click"
+                    Style="{StaticResource MaterialDesignFloatingActionButton}"
+                    HorizontalAlignment="Left"
+                    BorderBrush="{x:Null}"
+                    Background="{x:Null}" Cursor="Hand">
+                    <StackPanel Margin="5">
+                        <materialDesign:PackIcon Kind="AccountTie"  Width="40" Height="40"/>
+                    </StackPanel>
+
+                </Button>
+
+                <Button 
+                    Margin="0 120"
+                    Name="btnExit"
+                    Style="{StaticResource MaterialDesignFloatingActionButton}"
+                    HorizontalAlignment="Left"
+                    BorderBrush="{x:Null}"
+                    Background="{x:Null}" Cursor="Hand" Click="btnExit_Click">
+
+                    <StackPanel Margin="5">
+                        <materialDesign:PackIcon Kind="ExitToApp" FontSize="20"  Width="40" Height="40" Foreground="Red"/>
+                    </StackPanel>
+
+                </Button>
+
+            </StackPanel>
+        </Border>
+
         <ContentControl Content="{Binding}" Grid.Column="1" Grid.Row="1" Grid.RowSpan="8" Height="Auto" Width="Auto"></ContentControl>
-        <TextBlock Grid.Row="0" Text="ShopApp" TextAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Broadway" FontWeight="Normal"/>
-        <Button Grid.Row="1" Name="btnEmployee" Height="50" Width="auto" Content="Employee"/>
-        <Button Grid.Row="2" Name="btnTask" Height="50" Width="auto" Content="Task"/>
-        <Button Grid.Row="3" Name="btnSalary" Height="50" Width="auto" Content="Salary"/>
-        <Button Grid.Row="4" Name="btnPermission" Height="50" Width="auto" Content="Permision"/>
-        <Button Grid.Row="5" Name="btnShop" Height="50" Width="auto" Content="Shop" Click="btnShop_Click"/>
-        <Button Grid.Row="6" Name="btnPosition" Height="50" Width="auto" Content="Position"/>
-        <Button Grid.Row="7" Name="btnLogOut" Height="50" Width="auto" Content="Log Out"/>
-        <Button Grid.Row="8" Name="btnExit" Height="50" Width="auto" Content="Exit" Background="#FFFF3636" Foreground="White"/>
-            
 
     </Grid>
     <Window.Resources>
         <DataTemplate x:Name="ShopTemplate" DataType="{x:Type viewmodels:ShopViewModel}">
             <views:ShopList>
-                
+
             </views:ShopList>
+        </DataTemplate>
+        <DataTemplate x:Name="PositiontTemplate" DataType="{x:Type viewmodels:PositionViewModel}">
+            <views:PositionList>
+
+            </views:PositionList>
+        </DataTemplate>
+
+        <DataTemplate x:Name="TaskTemplate" DataType="{x:Type viewmodels:TaskViewModel}">
+            <views:TaskList>
+
+            </views:TaskList>
+        </DataTemplate>
+
+
+        <DataTemplate x:Name="EmployeeTemplate" DataType="{x:Type viewmodels:EmployeeViewModel}">
+            <views:EmployeeListView>
+
+            </views:EmployeeListView>
         </DataTemplate>
     </Window.Resources>
 </Window>
